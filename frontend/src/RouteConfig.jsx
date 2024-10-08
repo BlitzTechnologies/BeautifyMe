@@ -5,9 +5,6 @@ import Faqpage from "./pages/Faqpage";
 import RegisterPage from "./pages/RegisterPage";
 import LoginPage from "./pages/LoginPage"
 import ContactPage from "./pages/ContactPage";
-import MainVideo from "./components/videoTech/MainVideo";
-import CreateRoomPage from "./pages/CreateRoomPage"
-import JoinRoomPage from "./pages/JoinRoomPage";
 const router = createBrowserRouter([
   {
     path: "/",
@@ -32,18 +29,6 @@ const router = createBrowserRouter([
       {
         path: "Contact",
         element: <ContactPage />,
-      },
-      {
-        path: "CreateRoom",
-        element: <CreateRoomPage />,
-      },
-      {
-        path: "JoinRoom",
-        element: <JoinRoomPage />,
-      },
-      {
-        path: "Video/:id",
-        element: <MainVideo />,
       },
     ],
   },
