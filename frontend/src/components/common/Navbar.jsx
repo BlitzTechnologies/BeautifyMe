@@ -21,9 +21,9 @@ import ListItemText from '@mui/material/ListItemText';
 import { Menu } from '@mui/material';
 import { Link as RouterLink } from 'react-router-dom';
 import { useAuth } from '../../contexts/AuthContext';
+import logo from '../images/logo.jpg';
 
-
-const pages = ['Events', 'Rooms', 'Interests', 'Contact'];
+const pages = ['Home', 'Interests', 'Contact'];
 const settings = [
     { name: 'Sign in', path: '/login' },
     { name: 'Sign up', path: '/register' },
@@ -59,12 +59,22 @@ function Navbar(props) {
         <AppBar
             position="static"
             sx={{
-                backgroundColor: '#ffbf00'
+                backgroundColor: '#C9A9A6'
             }}
         >
             <Container maxWidth="xl">
                 <Toolbar disableGutters>
-                    <AdbIcon sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }} />
+                    <img
+                        src={logo}
+                        alt="Logo"
+                        style={{
+                            display: 'flex',
+                            marginRight: '8px',
+                            width: '40px',
+                            height: '40px',
+                            borderRadius: '50%'
+                        }}
+                    />
                     <Typography
                         variant="h6"
                         noWrap
@@ -73,14 +83,14 @@ function Navbar(props) {
                         sx={{
                             mr: 2,
                             display: { xs: 'none', md: 'flex' },
-                            fontFamily: 'Poppins',
+                            fontFamily: 'Inter',
                             fontWeight: 700,
-                            letterSpacing: '.3rem',
-                            color: 'inherit',
+                            letterSpacing: '0rem',
+                            color: 'white',
                             textDecoration: 'none'
                         }}
                     >
-                        SOCIAL360
+                        BeautifyMe
                     </Typography>
 
                     <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
@@ -97,7 +107,7 @@ function Navbar(props) {
                             open={drawerOpen}
                             onClose={toggleDrawer(false)}
                             sx={{
-                                '& .MuiDrawer-paper': { bgcolor: '#ffbf00' }
+                                '& .MuiDrawer-paper': { bgcolor: '#C9A9A6' }
                             }}
                         >
                             <Box
@@ -112,7 +122,10 @@ function Navbar(props) {
                                     {pages.map((page) => (
                                         <ListItem key={page} disablePadding>
                                             <ListItemButton>
-                                                <ListItemText primary={page} sx={{ textAlign: 'center', fontFamily: 'Poppins' }} />
+                                                <ListItemText primary={page} sx={{ 
+                                                    textAlign: 'center', 
+                                                    fontFamily: 'Inter',
+                                                    color: 'white'}} />
                                             </ListItemButton>
                                         </ListItem>
                                     ))}
@@ -130,20 +143,28 @@ function Navbar(props) {
                             mr: 2,
                             display: { xs: 'flex', md: 'none' },
                             flexGrow: 1,
-                            fontFamily: 'Poppins',
+                            fontFamily: 'Inter',
                             fontWeight: 700,
-                            letterSpacing: '.3rem',
+                            letterSpacing: '0rem',
                             color: 'inherit',
                             textDecoration: 'none'
                         }}
                     >
-                        SOCIAL360
+                        BeautifyMe
                     </Typography>
                     <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
                         {pages.map((page) => (
                             <Button
                                 key={page}
-                                sx={{ my: 2, color: 'white', display: 'block', fontFamily: 'Poppins' }}
+                                sx={{
+                                    my: 2,
+                                    color: 'white',
+                                    display: 'block',
+                                    fontFamily: 'Inter',
+                                    textTransform: 'none',
+                                    fontWeight: 500,
+                                    fontSize: 17
+                                }}
                             >
                                 {page}
                             </Button>
@@ -180,12 +201,22 @@ function Navbar(props) {
                         </Box>
                     ) :
                         (
-                            <Link
-                                href={'/login'}
-                                sx={{ my: 2, color: 'white', display: 'block', fontFamily: 'Poppins', textDecoration: "none" }}
-                            >
-                                login
-                            </Link>
+                            <Button
+        variant="contained"
+        href="/login"
+        sx={{
+            my: 2,
+            backgroundColor: '#FFF5EE', // White background
+            color: '#C9A9A6', // Adjust text color to match your design
+            fontFamily: 'Inter',
+            textDecoration: 'none',
+            '&:hover': {
+                backgroundColor: '#f0f0f0' // Optional: lighter shade on hover
+            }
+        }}
+    >
+        Login
+    </Button>
                         )}
                 </Toolbar>
             </Container>

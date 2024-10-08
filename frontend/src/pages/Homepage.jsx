@@ -1,9 +1,9 @@
 import Hero from "../components/homepage/Hero";
-import Welcome from "../components/homepage/Welcome";
+import SearchBarWithFilter from "../components/homepage/SearchBarWithFilter";
 function Homepage() {
   return (
     <div className="Homepage">
-      <Welcome />
+      <SearchBarWithFilter />
       <Hero />
     </div>
   );
