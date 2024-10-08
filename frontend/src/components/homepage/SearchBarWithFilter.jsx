@@ -13,7 +13,6 @@ function SearchBarWithFilter() {
     return (
         <Box
             sx={{
-                width: { xs: "90%", sm: "80%", md: "80%" },
                 display: "flex",
                 justifyContent: "center",
                 alignItems: "center",

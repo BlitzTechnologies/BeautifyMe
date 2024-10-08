@@ -10,13 +10,14 @@ import { AuthProvider } from './contexts/AuthContext';
 
 const theme = createTheme({
     typography: {
-        fontFamily: 'Poppins, Arial, sans-serif'
+        fontFamily: 'Inter'
     },
     components: {
         MuiCssBaseline: {
             styleOverrides: {
                 body: {
-                    fontFamily: 'Poppins, Arial, sans-serif',
+                    fontFamily: 'Inter',
+                    
                 }
             }
         }
@@ -35,6 +36,8 @@ function Root() {
                         <Box
                             sx={{
                                 minHeight: "84vh",
+                                maxWidth: "85%",
+                                margin: '0 auto',
                             }}
                         >
                             <Outlet />
